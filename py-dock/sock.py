@@ -18,5 +18,8 @@ for port in range(start_port, end_port + 1):
     if check_port(port):
         available_ports.append(port)
 
+# number of ports to write to json file
+val = int(input("Enter number of ports to write to json file: "))
+
 with open('ports.json', 'w') as file:
-        json.dump({"avail_ports": available_ports[:8]}, file)
+        json.dump({"avail_ports": available_ports[:val]}, file)
